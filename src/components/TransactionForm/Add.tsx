@@ -8,7 +8,7 @@ import {
   useMediaQuery,
   useTheme,
 } from "@material-ui/core";
-import { Field, Form, Formik } from "formik";
+import { Form, Formik } from "formik";
 
 interface Props {
   open: boolean;
