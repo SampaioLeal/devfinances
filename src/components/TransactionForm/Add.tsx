@@ -24,9 +24,9 @@ function AddTransaction({ open, handleClose }: Props) {
     amount: "",
   };
 
-  function handleValidate(values) {}
+  function handleValidate(values: any) {}
 
-  function handleSubmit(values) {}
+  function handleSubmit(values: any) {}
 
   return (
     <Dialog
@@ -40,7 +40,7 @@ function AddTransaction({ open, handleClose }: Props) {
       </DialogTitle>
       <DialogContent>
         <Formik
-          initialValues={{}}
+          initialValues={initialValues}
           validate={handleValidate}
           onSubmit={handleSubmit}
         >
