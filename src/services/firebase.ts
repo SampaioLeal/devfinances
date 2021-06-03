@@ -50,6 +50,10 @@ class FirebaseServices {
       .then(() => {})
       .catch((error) => {});
   }
+
+  dateToTimestamp(date: Date) {
+    return firebase.firestore.Timestamp.fromDate(date);
+  }
 }
 
 const firebaseServices = new FirebaseServices();

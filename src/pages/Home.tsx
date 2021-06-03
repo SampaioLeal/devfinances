@@ -95,16 +95,15 @@ function Home() {
         <Grid item xs={12} className={classes.content}>
           <Container>
             <Grid container spacing={2}>
-              <Grid item xs={12}>
-                {transactionsStore.transactions.map((transaction) => (
+              {transactionsStore.transactions.map((transaction) => (
+                <Grid item xs={12} key={transaction.id}>
                   <TransactionCard
-                    key={transaction.id}
                     description={transaction.description}
                     amount={transaction.amount}
                     date={transaction.date}
                   />
-                ))}
-              </Grid>
+                </Grid>
+              ))}
             </Grid>
           </Container>
         </Grid>

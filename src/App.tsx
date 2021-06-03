@@ -8,6 +8,8 @@ import authStore from "./stores/auth";
 import Loader from "./components/Loader/inex";
 import PrivateRoute from "./components/PrivateRoute";
 import Login from "./pages/Login";
+import { MuiPickersUtilsProvider } from "@material-ui/pickers";
+import DateFnsUtils from "@date-io/date-fns";
 
 function App() {
   useEffect(() => {
@@ -16,16 +18,18 @@ function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <CssBaseline />
+      <MuiPickersUtilsProvider utils={DateFnsUtils}>
+        <CssBaseline />
 
-      <BrowserRouter>
-        <Switch>
-          <PrivateRoute exact path="/" component={Home} />
-          <Route path="/login" component={Login} />
-        </Switch>
-      </BrowserRouter>
+        <BrowserRouter>
+          <Switch>
+            <PrivateRoute exact path="/" component={Home} />
+            <Route path="/login" component={Login} />
+          </Switch>
+        </BrowserRouter>
 
-      <Loader />
+        <Loader />
+      </MuiPickersUtilsProvider>
     </ThemeProvider>
   );
 }

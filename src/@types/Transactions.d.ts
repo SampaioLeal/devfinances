@@ -4,7 +4,7 @@ interface IUserInfo {
 }
 
 interface ITransaction {
-  id: string;
+  id?: string;
   description: string;
   amount: number;
   date: Date;
